@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+interval="${1:-30}"
+if [[ ! "$interval" =~ ^[1-9][0-9]*$ ]] || (( interval > 60 )); then
+    printf 'Usage: %s [refresh-seconds (1-60)]\n' "$0" >&2
+    exit 2
+fi
+if ! command -v neofetch >/dev/null 2>&1; then
+    printf 'Neofetch is required but was not found in PATH.\n' >&2
+    exit 1
+fi
+if [[ ! -t 1 ]]; then
+    printf 'Run nx-live directly in a terminal.\n' >&2
+    exit 1
+fi
+
+trap 'printf "\033[0m\033[?25h\n"' EXIT
+trap 'exit 130' INT TERM
+
+while :; do
+    printf '\033[2J\033[H'
+    neofetch
+    printf '\nLive refresh every %ss · Ctrl+C to stop\n' "$interval"
+    sleep "$interval"
+done

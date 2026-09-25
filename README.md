@@ -26,6 +26,10 @@ The preset searches thermal-zone type names for CPU/GPU sensors and falls back t
 
 Desktop environment names use the active desktop-session environment variables, with common names normalized (for example, `Unity:Unity7:ubuntu` displays as `Unity 7`). Window manager, GTK theme, and icon theme continue to be reported by Neofetch.
 
+## Live refresh
+
+Run `./nx-live` from this checkout to redraw the Neofetch output every 30 seconds. Pass an interval from 1 to 60 seconds to change it, such as `./nx-live 20`. The command reruns Neofetch directly in the terminal to preserve its colors and alignment. Press `Ctrl+C` to stop.
+
 ## Attribution and license
 
 The Joy-Con `#` artwork is adapted from `printAscii()` in [Xc987/NX-Fetch](https://github.com/Xc987/NX-Fetch), copyright Xc98, under the MIT license. The complete upstream notice is included in [LICENSE](LICENSE). The Neofetch configuration and installer are also released under MIT.
