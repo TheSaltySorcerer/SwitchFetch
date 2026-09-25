@@ -24,6 +24,8 @@ Run `neofetch` in a terminal. To remove auto-start, delete the block marked `NX-
 
 The preset searches thermal-zone type names for CPU/GPU sensors and falls back to the common Switchroot zone indices (1 and 2). It searches power-supply sysfs entries for a readable battery capacity and omits unavailable values as `N/A`. Sensor labels, thermal zones, and battery interfaces can vary across kernel builds, so the live temperatures and battery display were confirmed only on one Switchroot installation; the other supported hardware/flavor combinations have not been physically tested.
 
+Desktop environment names use the active desktop-session environment variables, with common names normalized (for example, `Unity:Unity7:ubuntu` displays as `Unity 7`). Window manager, GTK theme, and icon theme continue to be reported by Neofetch.
+
 ## Attribution and license
 
 The Joy-Con `#` artwork is adapted from `printAscii()` in [Xc987/NX-Fetch](https://github.com/Xc987/NX-Fetch), copyright Xc98, under the MIT license. The complete upstream notice is included in [LICENSE](LICENSE). The Neofetch configuration and installer are also released under MIT.
