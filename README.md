@@ -11,7 +11,6 @@ Target: Switchroot L4T Ubuntu Noble 24.04, including its KDE and Unity desktop f
 The original setup was verified on Ubuntu Noble with Neofetch 7.1. Hardware telemetry is discovered at runtime: thermal-zone names are matched where the kernel provides them, with the common Switchroot zone indices as fallback; battery details are omitted automatically if the battery sysfs interface is unavailable. Other distributions, Switchroot releases, and Neofetch versions have not been independently verified.
 
 ```bash
-cd nx-switch-neofetch
 bash install.sh --autostart
 ```
 
@@ -21,7 +20,7 @@ Run `neofetch` in a terminal. To remove auto-start, delete the block marked `NX-
 
 ## Hardware telemetry
 
-The preset reads CPU and GPU temperatures from Switchroot thermal zones 1 and 2, and battery level/status from `/sys/class/power_supply/battery`. Those paths are specific to the Switchroot kernel; adjust the paths in `config.conf` if your kernel exposes different names.
+The preset searches thermal-zone type names for CPU/GPU sensors and falls back to the common Switchroot zone indices (1 and 2). It searches power-supply sysfs entries for a readable battery capacity and omits unavailable values as `N/A`. Sensor labels, thermal zones, and battery interfaces can vary across kernel builds, so the live temperatures and battery display were confirmed only on one Switchroot installation; the other supported hardware/flavor combinations have not been physically tested.
 
 ## Attribution and license
 
