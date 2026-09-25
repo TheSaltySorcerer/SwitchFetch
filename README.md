@@ -11,6 +11,8 @@ Target: Switchroot L4T Ubuntu Noble 24.04, including its KDE and Unity desktop f
 The original setup was verified on Ubuntu Noble with Neofetch 7.1. Hardware telemetry is discovered at runtime: thermal-zone names are matched where the kernel provides them, with the common Switchroot zone indices as fallback; battery details are omitted automatically if the battery sysfs interface is unavailable. Other distributions, Switchroot releases, and Neofetch versions have not been independently verified.
 
 ```bash
+git clone https://github.com/TheSaltySorcerer/SwitchFetch.git
+cd SwitchFetch
 bash install.sh --autostart
 ```
 
